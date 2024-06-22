@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React intro</title>
+</head>
+<body>
+    <div class="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const baseElement = document.querySelector('.root')
+        const jsxElement = <p>We learning react</p>
+
+        const header = (
+            <header style={{fontSize: "20px", textAlign:"center", margin:"0 auto", height:"40vh"}}>
+                Welcome to the header
+            </header>
+        )
+        const date = new Date()
+        const techs = ['HTML', 'CSS', 'JavaScript']
+        const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
+
+        const body = (
+            <div style={{fontSize: "20px", textAlign:"center", margin:"0 auto", height:"20vh"}}>
+                we in the body
+                The year is : {date.getFullYear()}
+                {techsFormatted}
+            </div>
+        )
+
+        const footer = (
+            <div style={{margin:"0 auto", textAlign:"center", display:"flex"}}>footer here</div>
+        )
+        
+        const content = (
+            <div>
+                {header}
+                {body}
+                {footer}
+            </div>
+        )
+        ReactDOM.render(content, baseElement)
+    </script>
+</body>
+</html>
