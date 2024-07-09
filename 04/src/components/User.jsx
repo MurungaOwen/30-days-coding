@@ -6,6 +6,32 @@ import React from 'react';
  * 
  * @returns 
  */
+class Button extends React.Component{
+    constructor(props){
+        super(props);
+    }
+    render(){
+        return (
+            <>
+                <button onClick={this.props.onClick}>{this.props.text}</button>
+            </>
+        )
+    }
+}
+
+class MyComponent extends React.Component{
+    constructor(props){
+        super(props);
+    }
+    greet(){
+        alert("Hello coder")
+    }
+    render(){
+        return (
+            <Button text="Greet me" onClick={this.greet}/>
+        )
+    }
+}
 export default function User(props) {
     const divStyle = {
         maxWidth: "540px",
@@ -39,6 +65,7 @@ export default function User(props) {
                                     <li key={index} className="text-light bg-primary p-1 rounded m-1">{item}</li>
                                 ))}
                             </ul>
+                            <MyComponent />
                         </div>
                     </div>
                 </div>
